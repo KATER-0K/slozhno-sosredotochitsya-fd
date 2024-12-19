@@ -1,4 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+body>* {
+  padding-inline: 10px;
+}
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
@@ -17,7 +20,7 @@
   display: grid;
   position: relative;
   width: 100%;
-  grid-template-rows: 1fr min-content 1fr;
+  grid-template-rows: min-content min-content min-content;
   grid-template-columns: 1fr;
   height: 100vh;
   padding: 0;
@@ -90,15 +93,14 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color, #FF0070);
+  border-bottom: 1px solid currentColor;
   outline: none;
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
   cursor: default;
-  outline: 1px solid var(--accent-color, #FF0070);
-  pointer-events: none;
+  outline: 1px solid currentColor;
 }
 
 .header__subtitle {
@@ -106,14 +108,14 @@
   line-height: 130%;
   text-align: left;
   font-size: 18px;
-  color: var(--text-in-pink, #000028);
+  color: var(--header-text-color, #000028);
 }
 
 .header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   align-self: center;
   color: var(--title-color, #db00ff);
-  line-height: 82.5%;
+  line-height: 83%;
   text-shadow: 4px 4px 0 var(--shadow-title, #FF0070);
   padding-block-start: 8px;
   padding-inline-end: 10px;
@@ -121,9 +123,8 @@
 }
 
 .header__start {
-  font-weight: 700;
-  justify-self: end;
   align-self: end;
+  justify-self: end;
   padding-inline-end: 10px;
   padding-inline-start: 10px;
 }
@@ -150,7 +151,7 @@
   justify-content: center;
   align-items: center;
   top: 11px;
-  right: 20px;
+  right: 19px;
   gap: 5px;
 }
 
@@ -195,7 +196,9 @@
   line-height: 130%;
 }
 
-.focus {
+.focus,
+.attention,
+.goldfish {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -213,33 +216,25 @@
   gap: 10px;
 }
 
+.line-break {
+  display: block;
+}
+
 .link {
   text-decoration: none;
-  text-shadow: 3px 2px 0 var(--header-background, #ff0070);
+  text-shadow: 2px 2px 0 var(--header-background, #ff0070);
 }
 
 .link:hover {
-  border-bottom: 1px solid var(--text-color, #f1b2ce);
+  border-bottom: 1px solid currentColor;
 }
 
 .link:focus {
-  outline: 0;
+  outline: none;
 }
 
 .link:focus-visible {
-  outline: 1px solid var(--text-color, #f1b2ce);
-}
-
-.attention {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.goldfish {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  outline: 1px solid currentColor;
 }
 
 .gallery {
@@ -285,7 +280,7 @@
   justify-self: center;
   color: var(--title-color, #db00ff);
   text-shadow: 2px 2px 0px var(--shadow-title, #ff0070);
-  line-height: 82.5%;
+  line-height: 83%;
 }
 
 @media (min-width: 768px) {
@@ -315,7 +310,6 @@
 
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    text-shadow: 4px 4px 0px var(--shadow-title, #FF0070);
     padding-left: 0;
   }
 
@@ -374,9 +368,9 @@
     padding: 0;
   }
 
-  .attention__container {
+  /*.attention__container {
     grid-column: 1 / 2;
-  }
+  }*/
 
   .goldfish {
     grid-template-columns: 1fr 2fr;
