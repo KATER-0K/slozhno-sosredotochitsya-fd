@@ -20,19 +20,3 @@
   --link-color: rgba(255, 0, 112, 0.4);
   --decor-display: flex;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --font-family: 'IBM Plex Mono';
-    --bg-image: url(../images/cover-image-dark.png);
-    --bg-color: #000028;
-    --header-text-color: #000028;
-    --header-background: #FF0070;
-    --text-color: #F1B2CE;
-    --accent-color: #FF0070;
-    --title-color: #DB00FF;
-    --shadow-title: #FF0070;
-    --link-color: rgba(255, 0, 112, 0.4);
-    --decor-display: flex;
-  }
-}
